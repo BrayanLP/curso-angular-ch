@@ -9,6 +9,7 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MatTableModule} from '@angular/material/table';
     MatToolbarModule,
     MatIconModule,
     MatTableModule,
+    MatChipsModule,
     BrowserAnimationsModule
   ],
   providers: [],
