@@ -1,0 +1,49 @@
+<form class="form"  [formGroup]="form" *ngIf="showForm" (ngSubmit)="submit(form)">
+  <h1>Formulario Ejercicio</h1>
+  <mat-form-field class="input" appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input type="text" formControlName="nombre" matInput placeholder="">
+    <mat-error  *ngIf="form.controls.nombre.invalid">
+      Nombre es <strong>requerido</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input"  appearance="fill">
+    <mat-label>Correo</mat-label>
+    <input type="text" formControlName="correo" matInput placeholder="">
+    <mat-error  *ngIf="form.controls.correo.invalid">
+      Correo es <strong>requerido</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input" appearance="fill">
+    <mat-label>Tipo de deporte</mat-label>
+    <mat-select  formControlName="tipo"> 
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
+    <mat-error  *ngIf="form.controls.tipo.invalid">
+      Tipo es <strong>requerido</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input"  appearance="fill">
+    <mat-label>Celular</mat-label>
+    <input type="text"  formControlName="celular" matInput placeholder="">
+    <mat-error  *ngIf="form.controls.celular.invalid">
+      Celular es <strong>requerido</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input" appearance="fill">
+    <mat-label>Descripcion</mat-label>
+    <textarea  formControlName="descripcion"  matInput placeholder=""></textarea>
+    <mat-error *ngIf="form.controls.descripcion.invalid">
+      Descripcion es <strong>requerido</strong>
+    </mat-error>
+  </mat-form-field>
+
+
+  <button class="button" mat-raised-button color="primary">Registrar</button>
+
+
+</form>
