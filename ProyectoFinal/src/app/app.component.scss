@@ -1,0 +1,23 @@
+.coderhouse-container{
+   height: calc(100vh - 64px);
+}
+
+.sidenav{
+   width: 280px;
+}
+.drawer-container{
+   padding: 1rem;
+   box-sizing: border-box;
+}
+.lista-menu{
+   a{
+       color: white;
+       text-decoration: none;
+       background-color: gray; 
+       display: block;
+       width: 100%;
+       padding: 10px;
+       border-radius: 5px;
+   }
+
+}
