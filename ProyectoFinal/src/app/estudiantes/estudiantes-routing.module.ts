@@ -18,7 +18,7 @@ const routes: Routes = [
         canActivate: [LoginGuard] 
       },
       {
-        path: "edicion/:id",
+        path: "editar/:id",
         component: EdicionEstudianteComponent,
         canActivate: [LoginGuard] 
       },
