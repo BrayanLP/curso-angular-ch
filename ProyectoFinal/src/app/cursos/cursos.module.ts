@@ -6,8 +6,8 @@ import { CursosRoutingModule } from './cursos-routing.module';
 // import { CrearComponent } from './components/crear/crear.component';
 // import { EdicionComponent } from './components/edicion/edicion.component';
 // import { ListaCursosComponent } from './components/lista-cursos/lista-cursos.component';
-import { ListaCursoComponent } from './components/lista-curso/lista-curso.component';
 // import { ComponentsedicionCursoComponent } from './componentsedicion-curso/componentsedicion-curso.component';
+import { ListaCursoComponent } from './components/lista-curso/lista-curso.component';
 import { EdicionCursoComponent } from './components/edicion-curso/edicion-curso.component';
 import { CrearCursoComponent } from './components/crear-curso/crear-curso.component';
 import { CursosComponent } from './cursos.component';
@@ -37,6 +37,11 @@ import { HttpClientModule } from '@angular/common/http';
     CrearCursoComponent,
     CursosComponent,
 
+  ],
+  imports: [
+    CommonModule,
+    CursosRoutingModule,
+
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
@@ -48,10 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     MatToolbarModule,
     HttpClientModule,
-  ],
-  imports: [
-    CommonModule,
-    CursosRoutingModule
   ]
 })
 export class CursosModule { }
+

@@ -6,51 +6,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 const ELEMENT_DATA: any = [
   {
     id: 1,
-    name: 'Brayan LP',
-    dni: '74081840',
-    email: 'blaureano@gmail.com',
-    celular: '993232',
-    fechaInicio: 'Thu Aug 21 2022 19:02:21 GMT-0500 (hora estándar de Perú)',
-  },
-  {
-    id: 1,
-    name: 'Brayan LP',
-    dni: '74081840',
-    email: 'blaureano@gmail.com',
-    celular: '993232',
-    fechaInicio: 'Thu Aug 10 2022 19:02:21 GMT-0500 (hora estándar de Perú)',
-  },
-  {
-    id: 1,
-    name: 'Brayan LP',
-    dni: '74081840',
-    email: 'blaureano@gmail.com',
-    celular: '993232',
-    fechaInicio: 'Thu Aug 15 2022 19:02:21 GMT-0500 (hora estándar de Perú)',
-  },
-  {
-    id: 1,
-    name: 'Brayan LP',
-    dni: '74081840',
-    email: 'blaureano@gmail.com',
-    celular: '993232',
-    fechaInicio: 'Thu Aug 13 2022 19:02:21 GMT-0500 (hora estándar de Perú)',
-  },
-  {
-    id: 1,
-    name: 'Brayan LP',
-    dni: '74081840',
-    email: 'blaureano@gmail.com',
-    celular: '993232',
-    fechaInicio: 'Thu Aug 01 2022 19:02:21 GMT-0500 (hora estándar de Perú)',
-  },
-  {
-    id: 1,
-    name: 'Brayan LP',
-    dni: '74081840',
-    email: 'blaureano@gmail.com',
-    celular: '993232',
-    fechaInicio: 'Thu Aug 03 2022 19:02:21 GMT-0500 (hora estándar de Perú)',
+    name: '---',
+    dni: '---',
+    email: '---',
+    celular: '---',
+    fechaInicio: '----',
   },
 ];
 
@@ -62,10 +22,10 @@ const ELEMENT_DATA: any = [
 export class ListaEstudianteComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = [
     'id',
-    'name',
+    'nombre',
     'dni',
-    'fechaInicio',
-    'email',
+    'ingreso',
+    'correo',
     'celular',
     'action',
   ];
@@ -82,9 +42,12 @@ export class ListaEstudianteComponent implements OnInit, OnDestroy {
 
   delete(dni: string) {
     console.log('DNI', dni);
-    this._snackBar.open(`usuario ${dni} eliminado`, '', {
-      duration: 5000,
-    });
+    this.estudiante.deleteEstudiante(dni).subscribe( (res) => {
+      this._snackBar.open(`usuario eliminado`, '', {
+        duration: 5000,
+      });
+      this.getEstudiante();
+    })
   }
   goToCreate() {
     this.router.navigate(['/estudiante/crear']);

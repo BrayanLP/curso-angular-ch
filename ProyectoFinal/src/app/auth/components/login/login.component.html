@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="container">
+  <form [formGroup]="form"  class="form-container" (ngSubmit)="submit()">
+      <h1>Login</h1>
+      <p class="descripcion">
+        acceso:     prueba@yopmail.com <br />
+        contraseña: 123456
+      </p>
+      <mat-form-field class="form-input" appearance="fill">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput value=""  formControlName="correo">
+          <mat-error *ngIf="form.controls.correo.invalid">
+              Campo requerido
+            </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-input" appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input type="password" matInput  formControlName="password" />
+          <mat-error *ngIf="form.controls.password.invalid">
+              Campo requerido
+            </mat-error>
+      </mat-form-field>
+
+      <button class="form-input" mat-raised-button color="primary">Ingresar</button>
+
+  </form>
+</div>

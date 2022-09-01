@@ -1,1 +1,35 @@
-<p>crear-estudiante works!</p>
+
+<form [formGroup]="form" class="form-container" (ngSubmit)="submit()">
+  <h2>Crear Estudiante</h2>
+   
+  <mat-form-field appearance="fill" class="form-input">
+      <mat-label>Nombre</mat-label>
+      <input type="text" matInput formControlName="nombre" placeholder="">
+      <mat-error *ngIf="form.controls.nombre.invalid">
+        Campo requerido
+      </mat-error>
+    </mat-form-field>
+  <mat-form-field appearance="fill" class="form-input">
+      <mat-label>DNI</mat-label>
+      <input type="text" matInput formControlName="dni" placeholder="" maxlength="8">
+      <mat-error *ngIf="form.controls.dni.invalid">
+        Campo requerido
+      </mat-error>
+    </mat-form-field>
+  <mat-form-field appearance="fill" class="form-input">
+      <mat-label>Correo</mat-label>
+      <input type="text" matInput formControlName="correo" placeholder="" >
+      <mat-error *ngIf="form.controls.correo.invalid">
+        Campo requerido
+      </mat-error>
+    </mat-form-field>
+  <mat-form-field appearance="fill" class="form-input">
+      <mat-label>Celular</mat-label>
+      <input type="text" matInput formControlName="celular" placeholder="" maxlength="9"> 
+      <mat-error *ngIf="form.controls.celular.invalid">
+       Campo requerido
+     </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Registrar</button>
+
+</form>

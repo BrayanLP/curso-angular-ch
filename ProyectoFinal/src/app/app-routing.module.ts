@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginGuard } from './auth/guard/login.guard';
 
 // import { CrearCursoComponent } from './components/crear-curso/crear-curso.component';
 // import { CrearEstudianteComponent } from './components/crear-estudiante/crear-estudiante.component';
@@ -19,18 +20,19 @@ const routes: Routes = [
   // { path: '', redirectTo: 'estudiante/lista', pathMatch: 'full' },
   { path: 'curso', 
     loadChildren: ()=> import('./cursos/cursos.module').then(m=> m.CursosModule),
-    // canActivate: [GuardGuard] 
+    canActivate: [LoginGuard] 
      
   }, 
   { 
     path: 'estudiante', 
     loadChildren: ()=> import('./estudiantes/estudiantes.module').then(m=> m.EstudiantesModule),
-    // canActivate: [GuardGuard] 
+    canActivate: [LoginGuard] 
   }, 
   { 
     path: 'auth', 
     loadChildren: ()=> import('./auth/auth.module').then(m=> m.AuthModule)
   }, 
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
 ];
 
 @NgModule({
