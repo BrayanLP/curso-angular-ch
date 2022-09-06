@@ -1,1 +1,36 @@
-<p>edicion-curso works!</p>
+
+<form [formGroup]="form" class="form-container" (ngSubmit)="submit(form)">
+  <h2>Editar Curso: {{id}}</h2>
+
+   
+  <mat-form-field appearance="fill" class="form-input">
+      <mat-label>Nombre</mat-label>
+      <input type="text" matInput formControlName="nombre" placeholder="" autocomplete="off">
+      <mat-error *ngIf="form.controls.nombre.invalid">
+        Campo requerido
+      </mat-error>
+    </mat-form-field>
+  <mat-form-field appearance="fill" class="form-input">
+      <mat-label>Profesor</mat-label>
+      <input type="text" matInput formControlName="profesor" placeholder="" autocomplete="off">
+      <mat-error *ngIf="form.controls.profesor.invalid">
+        Campo requerido
+      </mat-error>
+    </mat-form-field>
+  <mat-form-field appearance="fill" class="form-input">
+      <mat-label>Tiempo</mat-label>
+      <input type="text" matInput formControlName="tiempo" placeholder="" autocomplete="off">
+      <mat-error *ngIf="form.controls.tiempo.invalid">
+        Campo requerido
+      </mat-error>
+    </mat-form-field>
+  <mat-form-field appearance="fill" class="form-input">
+      <mat-label>Complejidad</mat-label>
+      <input type="text" matInput formControlName="complejidad" placeholder="" autocomplete="off">
+      <mat-error *ngIf="form.controls.complejidad.invalid">
+        Campo requerido
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Registrar</button>
+
+</form>
