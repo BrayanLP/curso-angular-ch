@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
   ) { 
 
     this.form = this.fb.group({
-      correo: ['', [Validators.email, Validators.required]],
-      password: ['', Validators.required], 
+      correo: ['prueba@yopmail.com', [Validators.email, Validators.required]],
+      password: ['123456', Validators.required], 
     })
 
     if(this.loginService.obtenerSesionActiva() == "true"){

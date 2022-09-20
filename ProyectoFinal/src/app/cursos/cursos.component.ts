@@ -11,5 +11,11 @@ export class CursosComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  logout(){
+    console.log('::SALIR::')
+    localStorage.removeItem("ACCESS")
+    localStorage.removeItem("DATA")
+    window.location.href= 'auth/login' 
+  }
 
 }
